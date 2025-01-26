@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import BotCollection from "./components/BotCollection";
+import YourBotArmy from "./components/YourBotArmy";
+import "./App.css";
+import "./index.css";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [bots, setBots] = useState([]);
+  const [yourArmy, setYourArmy] = useState([]);
+
+
+  useEffect(() => {
+    axios.get("https://bots-si0g.onrender.com/bots")
+      .then(r => setBots(r.data))
+      .catch(error => console.error(error));
+  }, []);
+
+  const enlistBot = (bot) => {
+    if (!yourArmy.find(b => b.id === bot.id)) {
+      setYourArmy([...yourArmy, bot]);
+    }
+  };
+
+  const releaseBot = (bot) => {
+    setYourArmy(yourArmy.filter(b => b.id !== bot.id));
+  };
+
+  const dischargeBot = (bot) => {
+    axios.delete(`https://bots-si0g.onrender.com/bots/${bot.id}`)
+      .then(() => {
+        setBots(bots.filter(b => b.id !== bot.id));
+        releaseBot(bot);
+      })
+      .catch(error => console.error(error));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <YourBotArmy yourArmy={yourArmy} releaseBot={releaseBot} dischargeBot={dischargeBot} />
+      <BotCollection bots={bots} enlistBot={enlistBot} />
+
+    </div>
+    
+  );
 }
 
-export default App
+
+
+
+export default App;
