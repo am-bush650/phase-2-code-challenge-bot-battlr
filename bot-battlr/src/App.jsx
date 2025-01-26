@@ -37,8 +37,16 @@ function App() {
       .catch(error => console.error(error));
   };
 
+  const handleSort = (criteria) => {
+    const sortedBots = [...bots].sort((a, b) => b[criteria] - a[criteria]);
+    setBots(sortedBots);
+  };
+
   return (
     <div className="App">
+      <h1>Bot Battlr</h1>
+      <sortBar onSort={handleSort} />
+      
       <YourBotArmy yourArmy={yourArmy} releaseBot={releaseBot} dischargeBot={dischargeBot} />
       <BotCollection bots={bots} enlistBot={enlistBot} />
 
