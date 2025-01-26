@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/bot-card.css";
+import "../assets/bot-card.css"
 
 function BotCard({ bot, enlistBot}) {
     return(

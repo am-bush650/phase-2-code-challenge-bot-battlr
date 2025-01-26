@@ -1,0 +1,47 @@
+.bot-specs {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.bot-specs img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.bot-specs h2 {
+    margin: 10px 0;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.bot-specs p {
+    margin: 5px 0;
+    color: #7f8c8d;
+}
+
+.bot-specs-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.bot-specs button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bot-specs button:hover {
+    background-color: #2980b9;
+}
