@@ -1,15 +1,15 @@
 .bot-card {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: rgb(177, 175, 175);
+    border-style: dashed;
+    border-width: thin;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bot-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0 0.2);
 }
 
 .bot-card img {
@@ -20,14 +20,14 @@
 }
 
 bot-card h3 {
-    margin 10px 0;
+    margin: 10px 0;
     font-size: 1.5rem;
     color: #2c3e50;
 }
 
 .bot-card p {
     margin: 5px 0;
-    color: #7f8c8d;
+    color: gray;
 }
 
 .bot-card button {

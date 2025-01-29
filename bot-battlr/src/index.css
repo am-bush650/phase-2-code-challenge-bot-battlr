@@ -11,17 +11,16 @@ h1, h2, h3 {
 }
 
 button {
-    background-color: #3498db;
+    background-color: rgb(245, 61, 61);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: brown;
 }
 
 button-disabled {
@@ -30,7 +29,7 @@ button-disabled {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }

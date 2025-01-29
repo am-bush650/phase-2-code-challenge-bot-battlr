@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "../assets/sort-bar.css";
 
-function SortBar ({onSort}) {
-    const [activeCreteria, setActiveCriteria] = useState(null);
+function SortBar ({onSort, activeCreteria}) {
 
     const handleClick = (criteria) => {
-        setActiveCriteria(criteria);
         onSort(criteria);
     };
 

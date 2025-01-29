@@ -13,6 +13,7 @@ function App() {
   const [bots, setBots] = useState([]);
   const [yourArmy, setYourArmy] = useState([]);
   const [selectedBot, setSelectedBot] = useState(null);
+  const [activeCreteria, setActiveCriteria] = useState(null);
 
 
   useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
   const handleSort = (criteria) => {
     const sortedBots = [...bots].sort((a, b) => b[criteria] - a[criteria]);
     setBots(sortedBots);
+    setActiveCriteria(criteria);
   };
 
   const handleBotClick = (bot) => {
@@ -58,7 +60,7 @@ function App() {
   return (
     <div className="App">
       <h1>Bot Battlr</h1>
-      <sortBar onSort={handleSort} />
+      <sortBar onSort={handleSort} activeCreteria={activeCreteria} />
       
       <YourBotArmy yourArmy={yourArmy} releaseBot={releaseBot} dischargeBot={dischargeBot} />
       {selectedBot ? (
