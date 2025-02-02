@@ -1,18 +1,19 @@
 .bot-specs {
-    background-color: white;
+    background-color:white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px dotted lightgrey;
     padding: 20px;
     text-align: center;
-    max-width: 400px;
+    max-width: 200px;
+    height: fit-content;
     margin: 0 auto;
 }
 
 .bot-specs img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .bot-specs h2 {
@@ -33,15 +34,10 @@
 }
 
 .bot-specs button {
-    background-color: #3498db;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.bot-specs button:hover {
-    background-color: #2980b9;
 }

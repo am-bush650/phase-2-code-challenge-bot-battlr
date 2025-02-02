@@ -1,6 +1,29 @@
 .bot-collection {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bot-card {
+    border: 1px dotted #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+}
+.bot-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.bot-card button {
+    background-color: darkgrey;
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.bot-card button:hover {
+    background-color: black;
 }

@@ -1,34 +1,27 @@
 .your-bot-army {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    background-color: #ecf0f1;
-    border-radius: 10px;
-    margin-top: 20px;
+    gap: 10px;
+    
 }
 
 .enlisted-bot {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    border: 1px dotted lightgrey;
+    padding: 10px;
     text-align: center;
-    width: 200px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
+    height:fit-content;
 }
 
 .enlisted-bot:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
 }
 
 .enlisted-bot img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .enlisted-bot h3 {
@@ -40,8 +33,5 @@
 .enlisted-bot button {
     margin: 5px;
     padding: 5px 10px;
-    font-size: 0.9rem;
+    cursor: pointer;
 }
-
-
-    
