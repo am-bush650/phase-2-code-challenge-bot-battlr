@@ -10,7 +10,6 @@ function App() {
     const [bots, setBots] = useState([]); // Stores the list of all bots fetched from the API
     const [yourArmy, setYourArmy] = useState([]); // Stores the list of bots enlisted in the user's army
     const [selectedBot, setSelectedBot] = useState(null); // Stores the currently selected bot for detailed view
-    const [activeCriteria, setActiveCriteria] = useState(null); // Stores the current sorting criteria (e.g., health, damage)
     const [error, setError] = useState(""); // Stores error messages
 
     useEffect(() => {
@@ -44,11 +43,6 @@ function App() {
             });
     };
 
-    const handleSort = (criteria) => {
-        setActiveCriteria(criteria); // Update the active criteria
-        const sortedBots = [...bots].sort((a, b) => b[criteria] - a[criteria]); // Sort from highest to lowest
-        setBots(sortedBots);
-    };
 
     const handleBotClick = (bot) => {
         setSelectedBot(bot); // Set the selectedBot state to the clicked bot
